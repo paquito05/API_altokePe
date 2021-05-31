@@ -1,0 +1,27 @@
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    ##url: jdbc:postgresql://localhost:5432/evelynSpa
+    url: jdbc:postgresql://localhost:5432/altokpe
+    username: postgres
+    ##password: password
+    password: chamuco2001
+
+   
+#server:
+  #port: 8082
+
+#spring:
+ # jpa:
+  #  hibernate:
+   #   ddl-auto: update
+    #properties:
+     # hibernate:
+      #  dialect: org.hibernate.dialect.MySQL5Dialect
+  #datasource:
+   # driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/altokepe?zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    #username: root
+    #password: chamuco2001
+    
