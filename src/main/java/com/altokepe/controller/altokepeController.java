@@ -14,11 +14,13 @@ import com.altokepe.repository.Administrador;
 import com.altokepe.repository.Usuario;
 import com.altokepe.repository.Empleado;
 import com.altokepe.repository.Menu;
+import com.altokepe.repository.Movimientos;
 import com.altokepe.repository.Pedidos;
 import com.altokepe.service.AdministradorService;
 import com.altokepe.service.UsuarioService;
 import com.altokepe.service.EmpleadoService;
 import com.altokepe.service.MenuService;
+import com.altokepe.service.MovimientosService;
 import com.altokepe.service.PedidosService;
 
 
@@ -42,6 +44,10 @@ public class altokepeController {
 	
 	@Autowired
 	private PedidosService pedidosService;
+	
+	
+	@Autowired
+	private MovimientosService movimientosService;
 	
 	
 	/*
@@ -217,6 +223,33 @@ public class altokepeController {
 		public ResponseEntity<?> eliminarMenu(@PathVariable int idmenu) throws Exception{
 			String data = menuService.eliminarMenu(idmenu);
 				
+			return new ResponseEntity<>(data,HttpStatus.OK);
+		}
+		
+		
+		
+		/**
+		 *  STORE PROCEDURE MOVIMIENTOS
+		 * 
+		 */
+		
+		
+		//LISTAR PEDIDOS
+		@RequestMapping(value="/pedidos/listar/{idpedido}", method = RequestMethod.GET)
+		public ResponseEntity<?> ListarMovimientos(@PathVariable int idusuario) throws Exception{
+			 
+			String data = movimientosService.ListarMovimientos(idusuario);
+			
+			return new ResponseEntity<>(data, HttpStatus.OK);
+		}
+		
+		
+		//STORE PROCEDURE INSERTAR PEDIDOS
+		@RequestMapping(value="/pedidos/insertar", method= RequestMethod.POST)
+		public ResponseEntity<?> RecargarSaldo(@RequestBody Movimientos movimientos) throws Exception{
+								
+			String data = movimientosService.RecargarSaldo(movimientos);
+										
 			return new ResponseEntity<>(data,HttpStatus.OK);
 		}
 		
