@@ -235,7 +235,7 @@ public class altokepeController {
 		
 		
 		//LISTAR PEDIDOS
-		@RequestMapping(value="/pedidos/listar/{idpedido}", method = RequestMethod.GET)
+		@RequestMapping(value="/movimientos/listar/{idusuario}", method = RequestMethod.GET)
 		public ResponseEntity<?> ListarMovimientos(@PathVariable int idusuario) throws Exception{
 			 
 			String data = movimientosService.ListarMovimientos(idusuario);
@@ -245,7 +245,7 @@ public class altokepeController {
 		
 		
 		//STORE PROCEDURE INSERTAR PEDIDOS
-		@RequestMapping(value="/pedidos/insertar", method= RequestMethod.POST)
+		@RequestMapping(value="/movimientos/insertar", method= RequestMethod.POST)
 		public ResponseEntity<?> RecargarSaldo(@RequestBody Movimientos movimientos) throws Exception{
 								
 			String data = movimientosService.RecargarSaldo(movimientos);
