@@ -10,8 +10,13 @@ import com.altokepe.repository.Movimientos;
 @Repository
 public interface MovimientosRepositoryI extends CrudRepository<Movimientos, Integer>{
 	
-		@Procedure(name="listar_movimientos")
-		public String listarMovimientos(
+		@Procedure(name="listar_movimientos_pedidos")
+		public String listarMovimientos_pedidos(
+				@Param("in_idusuario") int idusuario
+				);
+		
+		@Procedure(name="listar_movimientos_recargas")
+		public String listarMovimientos_recargas(
 				@Param("in_idusuario") int idusuario
 				);
 		

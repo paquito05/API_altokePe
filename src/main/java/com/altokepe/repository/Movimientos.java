@@ -14,13 +14,18 @@ import javax.persistence.Table;
 @Table(name="movimientos")
 
 @NamedStoredProcedureQueries(value  = {
-		@NamedStoredProcedureQuery(name ="listar_movimientos", procedureName = "f_listar_movimientos", parameters = {
+		@NamedStoredProcedureQuery(name ="listar_movimientos_pedidos", procedureName = "f_listar_movimientos_pedidos", parameters = {
 				
 				@StoredProcedureParameter(mode = ParameterMode.IN, name="in_idusuario", type = Integer.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name ="out_resultado",type =String.class) }),
+				@StoredProcedureParameter(mode = ParameterMode.OUT, name ="out_resultado",type =String.class) }),
+		
+		@NamedStoredProcedureQuery(name ="listar_movimientos_recargas", procedureName = "f_listar_movimientos_recargas", parameters = {
+				
+				@StoredProcedureParameter(mode = ParameterMode.IN, name="in_idusuario", type = Integer.class),
+				@StoredProcedureParameter(mode = ParameterMode.OUT, name ="out_resultado",type =String.class) }),
 		
 		
-@NamedStoredProcedureQuery(name = "recargar_saldo", procedureName = "f_recargar_saldo", parameters = {
+		@NamedStoredProcedureQuery(name = "recargar_saldo", procedureName = "f_recargar_saldo", parameters = {
 				
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_idusuario", type = Integer.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_monto", type = Double.class),

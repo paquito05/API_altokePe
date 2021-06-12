@@ -17,6 +17,12 @@ public class UsuarioService {
 	public String listarUsuario(int idusuario) {
 		return usuarioRepositoryI.listarUsuario(idusuario);
 	}
+	
+	public String obtenerIdusuario(Usuario usuario) {
+		return usuarioRepositoryI.obtenerIdusuario(usuario.getDni());
+	}
+
+	
 
 	public String buscarUsuarioNombre(Usuario usuario) {
 		return usuarioRepositoryI.buscarUsuarioNombre(usuario.getNombres());

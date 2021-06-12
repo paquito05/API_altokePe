@@ -23,6 +23,11 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_nombre", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.OUT, name = "out_resultado", type = String.class) }),
 		
+		@NamedStoredProcedureQuery(name = "obtener_idusuario", procedureName = "f_obtener_idusuario", parameters = {
+				
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_dni", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.OUT, name = "out_resultado", type = String.class) }),
+		
 		@NamedStoredProcedureQuery(name = "listar_usuarios_telefono", procedureName = "f_buscar_usuarios_telefono", parameters = {
 				
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_celular", type = String.class),

@@ -23,7 +23,7 @@ import javax.persistence.Table;
 		@NamedStoredProcedureQuery(name = "insertar_menu", procedureName = "f_insertar_menu", parameters = {
 				
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_nombre", type = String.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_descripion", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_descripcion", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_precio", type = Double.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_imagen", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_fechamenu", type = Date.class),
@@ -33,7 +33,7 @@ import javax.persistence.Table;
 		
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_idmenu", type = Integer.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_nombre", type = String.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_descripion", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_descripcion", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_precio", type = Double.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_imagen", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "in_fechamenu", type = Date.class),
@@ -146,6 +146,8 @@ public class Menu {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
+
+	
 
 
 

@@ -86,6 +86,16 @@ public class altokepeController {
 					
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
+	
+	//STORE PROCEDURE BUSCAR USUARIO POR IDUSUSARIO
+	
+		@RequestMapping(value="/usuario/obtener/id", method = RequestMethod.POST)
+		public ResponseEntity<?> obteneridUsuario(@RequestBody Usuario usuario) throws Exception{
+						 
+			String data = usuarioService.obtenerIdusuario(usuario);
+						
+			return new ResponseEntity<>(data, HttpStatus.OK);
+		}
 	//STORE PROCEDURE BUSCAR USUARIO POR TELEFONO
 	
 	@RequestMapping(value="/usuario/buscar/telefono", method = RequestMethod.POST)
@@ -234,14 +244,23 @@ public class altokepeController {
 		 */
 		
 		
-		//LISTAR PEDIDOS
-		@RequestMapping(value="/movimientos/listar/{idusuario}", method = RequestMethod.GET)
-		public ResponseEntity<?> ListarMovimientos(@PathVariable int idusuario) throws Exception{
+		//LISTAR Movimientos pedidos
+		@RequestMapping(value="/movimientos/listarP/{idusuario}", method = RequestMethod.GET)
+		public ResponseEntity<?> ListarMovimientosPedidos(@PathVariable int idusuario) throws Exception{
 			 
-			String data = movimientosService.ListarMovimientos(idusuario);
+			String data = movimientosService.ListarMovimientos_pedidos(idusuario);
 			
 			return new ResponseEntity<>(data, HttpStatus.OK);
 		}
+		
+		//LISTAR movimientos recargas
+				@RequestMapping(value="/movimientos/listarR/{idusuario}", method = RequestMethod.GET)
+				public ResponseEntity<?> ListarMovimientosRecargas(@PathVariable int idusuario) throws Exception{
+					 
+					String data = movimientosService.ListarMovimientos_recargas(idusuario);
+					
+					return new ResponseEntity<>(data, HttpStatus.OK);
+				}
 		
 		
 		//STORE PROCEDURE INSERTAR PEDIDOS

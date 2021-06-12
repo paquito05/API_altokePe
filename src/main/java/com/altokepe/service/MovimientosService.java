@@ -12,8 +12,13 @@ public class MovimientosService {
 	@Autowired
 	private MovimientosRepositoryI movimientosRepositoryI;
 	
-	public String ListarMovimientos(int idusuario) {
-		return movimientosRepositoryI.listarMovimientos(idusuario);
+	public String ListarMovimientos_pedidos(int idusuario) {
+		return movimientosRepositoryI.listarMovimientos_pedidos(idusuario);
+				
+	}
+	
+	public String ListarMovimientos_recargas(int idusuario) {
+		return movimientosRepositoryI.listarMovimientos_recargas(idusuario);
 				
 	}
 	

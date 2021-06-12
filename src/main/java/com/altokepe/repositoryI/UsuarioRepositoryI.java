@@ -17,6 +17,11 @@ public interface UsuarioRepositoryI extends CrudRepository<Usuario, Integer> {
 			@Param("in_idusuario") int idusuario
 			);
 	
+	@Procedure(name="obtener_idusuario")
+	public String obtenerIdusuario(
+			@Param("in_dni") String dni
+			);
+	
 	@Procedure(name="listar_usuarios_nombre")
 	public String buscarUsuarioNombre(
 			@Param("in_nombre") String nombres
